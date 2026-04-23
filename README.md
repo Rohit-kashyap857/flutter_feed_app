@@ -38,7 +38,6 @@ https://drive.google.com/file/d/1nJoxVQgWilJPMzS65tbaCUsOx4jHWMg3/view
 ### 🖼️ Tiered Image Loading
 
 * 🟢 Thumbnail → instant load
-* 🟡 Mobile (1080p) → auto upgrade
 * 🔴 Raw image → loaded on demand
 
 ### ❤️ Optimistic UI
@@ -51,7 +50,6 @@ https://drive.google.com/file/d/1nJoxVQgWilJPMzS65tbaCUsOx4jHWMg3/view
 
 ## 🧪 Edge Case Handling (Phase 4)
 
-* 🛡️ Spam click protection (debounce + lock system)
 * 📶 Offline handling with UI rollback
 * 🔁 Prevent duplicate API calls
 * ⚡ Smooth performance during rapid scrolling
@@ -94,7 +92,7 @@ lib/
 ### 1️⃣ Clone the repository
 
 ```
-git clone https://github.com/your-username/flutter-feed-app.git
+git clone https://github.com/Rohit-kashyap857/flutter-feed-app.git
 cd flutter-feed-app
 ```
 
@@ -119,15 +117,6 @@ flutter run
 * GPU & memory optimization techniques in Flutter
 * Real-world UX patterns (Optimistic UI)
 * Robust error and edge case handling
-
----
-
-## 🎯 Future Improvements
-
-* 🔄 Add caching layer for offline feed
-* 🌐 Better error UI & retry system
-* 🎥 Video/media support
-* 🔔 Notifications system
 
 ---
 
