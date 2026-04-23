@@ -61,76 +61,149 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Text(
+          "Post",
+          style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
-      body: Stack(
+      body: Column(
         children: [
-          Positioned.fill(
-            child: Hero(
-              tag: widget.post.id,
-              child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 400),
-                child: CachedNetworkImage(
-                  key: ValueKey(imageUrl),
-                  imageUrl: imageUrl,
-                  fit: BoxFit.cover,
-                  placeholder: (_, __) => const Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                  errorWidget: (_, __, ___) => const Icon(
-                    Icons.error,
-                    color: Colors.white,
+          Expanded(
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: Hero(
+                    tag: widget.post.id,
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 400),
+                      child: CachedNetworkImage(
+                        key: ValueKey(imageUrl),
+                        imageUrl: imageUrl,
+                        fit: BoxFit.cover,
+                        placeholder: (_, __) => const Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                        errorWidget: (_, __, ___) => const Icon(
+                          Icons.error,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: 180,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Colors.black87, Colors.transparent],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
+                Positioned(
+                  bottom: 20,
+                  left: 20,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 12, vertical: 6),
+                    decoration: BoxDecoration(
+                      color: Colors.black54,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Text(
+                      isHighResLoading ? "Loading HD..." : "Preview",
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
           ),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            color: Colors.black,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.red.withOpacity(0.1),
+                      ),
+                      child: const Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                        size: 28,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
 
-          Positioned(
-            bottom: 30,
-            left: 20,
-            right: 20,
-            child: isHighResLoading
-                ? const Center(
-              child: CircularProgressIndicator(),
-            )
-                : ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.black,
-                padding:
-                const EdgeInsets.symmetric(vertical: 14),
-                shape: RoundedRectangleBorder(
-                  borderRadius:
-                  BorderRadius.circular(12),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "${widget.post.likeCount} likes",
+                          style: const TextStyle(
+                            color: Colors.red,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        const Text(
+                          "Liked · optimistic update",
+                          style: TextStyle(
+                            color: Colors.white54,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
-              ),
-              onPressed: loadHighRes,
-              icon: const Icon(Icons.download),
-              label: const Text(
-                "Download High-Res",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold),
-              ),
+
+                const SizedBox(height: 20),
+                const Divider(color: Colors.white12),
+                const SizedBox(height: 20),
+
+                Center(
+                  child: isHighResLoading
+                      ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                      : ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[900],
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                    onPressed: loadHighRes,
+                    icon: const Icon(Icons.download),
+                    label: const Text(
+                      "Download original (4K)",
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 10),
+
+                const Center(
+                  child: Text(
+                    "raw URL fetched only on tap",
+                    style: TextStyle(
+                      color: Colors.white38,
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
