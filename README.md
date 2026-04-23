@@ -6,7 +6,7 @@ A high-performance social media feed built using **Flutter + Riverpod**, designe
 
 ## 📱 Demo
 
-👉 *(Add your screen recording link here — Google Drive / YouTube)*
+<p align="center"> <a href="assets/images/demo.mp4"> <img src="assets/images/demo_thumbnail.png" width="300" /> </a> </p>
 
 ---
 
@@ -134,9 +134,3 @@ flutter run
 ## 🙌 Author
 
 **Rohit Kashyap**
-
----
-
-## ⭐ If you like this project
-
-Give it a ⭐ on GitHub!
