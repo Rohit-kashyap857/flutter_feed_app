@@ -6,7 +6,7 @@ A high-performance social media feed built using **Flutter + Riverpod**, designe
 
 ## 📱 Demo
 
-<p align="center"> <a href="assets/images/demo.mp4"> <img src="assets/social_feed_app demo.mp4" width="300" /> </a> </p>
+<p align="center"> <a href="assets/social_feed_app demo.mp4"> <img src="assets/social_feed_app demo.mp4" width="300" /> </a> </p>
 
 ---
 
