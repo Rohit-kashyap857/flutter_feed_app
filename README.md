@@ -1,17 +1,142 @@
-# social_feed_app
+# 🚀 Flutter Feed App 
 
-A new Flutter project.
+A high-performance social media feed built using **Flutter + Riverpod**, designed with **production-level architecture, performance optimization, and real-world UX patterns**.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📱 Demo
 
-A few resources to get you started if this is your first Flutter project:
+👉 *(Add your screen recording link here — Google Drive / YouTube)*
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🔥 Features
+
+### 📌 Core Features
+
+* ✅ Infinite Scrolling (Pagination with limit = 10)
+* ✅ Pull-to-Refresh
+* ✅ REST API Integration (No WebSockets)
+
+### ⚡ Performance Optimization
+
+* 🚀 GPU Optimization using `RepaintBoundary`
+* 🚀 Smooth scrolling with minimal frame drops
+* 🚀 Selective rebuilds using Riverpod `.select()`
+
+### 💾 Memory Optimization
+
+* 🧠 Optimized image loading using `memCacheWidth`
+* 🧠 Prevents Out Of Memory (OOM) crashes
+
+### 🎬 UI & UX
+
+* ✨ Beautiful card UI with heavy shadows
+* ✨ Hero Animation (Feed → Detail screen)
+* ✨ Animated Like button
+
+### 🖼️ Tiered Image Loading
+
+* 🟢 Thumbnail → instant load
+* 🟡 Mobile (1080p) → auto upgrade
+* 🔴 Raw image → loaded on demand
+
+### ❤️ Optimistic UI
+
+* ⚡ Instant like/unlike response
+* 🔄 Background API sync
+* 🔁 Rollback on failure (offline safe)
+
+---
+
+## 🧪 Edge Case Handling (Phase 4)
+
+* 🛡️ Spam click protection (debounce + lock system)
+* 📶 Offline handling with UI rollback
+* 🔁 Prevent duplicate API calls
+* ⚡ Smooth performance during rapid scrolling
+* 🧠 Memory-safe list rendering
+
+---
+
+## 🧠 Tech Stack
+
+* **Flutter**
+* **Riverpod (State Management)**
+* **Supabase (Backend / RPC)**
+* **CachedNetworkImage**
+
+---
+
+## 📁 Project Structure
+
+```
+lib/
+│
+├── core/
+│   ├── models/
+│   ├── services/
+│   └── utils/
+│
+├── features/
+│   └── feed/
+│       ├── provider/
+│       ├── screens/
+│       └── widgets/
+│
+└── main.dart
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the repository
+
+```
+git clone https://github.com/your-username/flutter-feed-app.git
+cd flutter-feed-app
+```
+
+### 2️⃣ Install dependencies
+
+```
+flutter pub get
+```
+
+### 3️⃣ Run the app
+
+```
+flutter run
+```
+
+---
+
+## 📌 Key Learnings
+
+* Efficient state management using Riverpod
+* Handling large lists without performance issues
+* GPU & memory optimization techniques in Flutter
+* Real-world UX patterns (Optimistic UI)
+* Robust error and edge case handling
+
+---
+
+## 🎯 Future Improvements
+
+* 🔄 Add caching layer for offline feed
+* 🌐 Better error UI & retry system
+* 🎥 Video/media support
+* 🔔 Notifications system
+
+---
+
+## 🙌 Author
+
+**Rohit Kashyap**
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub!
